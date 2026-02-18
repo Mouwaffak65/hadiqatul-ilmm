@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadiqatul-ilm · Ramadan 1447H</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf5ea;
+      color: #2a4230;
+      line-height: 1.5;
+    }
+
+    :root {
+      --vert-sauge: #6b8f71;
+      --vert-profond: #1f4a2c;
+      --or-doux: #c9a959;
+      --bleu-nuit: #173e4c;
+      --sable: #efe6d9;
+      --blanc-casse: #fefcf5;
+      --terre: #9c7a5c;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.75rem;
+    }
+
+    /* --- HEADER responsive --- */
+    header {
+      background: var(--bleu-nuit);
+      color: white;
+      padding: 1rem 0;
+      border-bottom: 4px solid var(--or-doux);
+      box-shadow: 0 4px 12px rgba(0,20,10,0.2);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .logo h1 span {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+      color: var(--or-doux);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: -0.3rem;
+    }
+
+    .logo i {
+      color: var(--or-doux);
+      margin-right: 0.3rem;
+    }
+
+    /* navigation */
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.6rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      color: #f0e7d6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--or-doux);
+      border-bottom-color: var(--or-doux);
+    }
+
+    .don-link a {
+      background: var(--or-doux);
+      color: #1d3925;
+      padding: 0.4rem 1.3rem;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+    }
+    .don-link a:hover {
+      background: #b8933f;
+      color: #102815;
+      border-bottom: none;
+    }
+
+    /* --- HERO section --- */
+    .hero {
+      background: linear-gradient(125deg, #dbcaad 0%, #f3eadc 100%);
+      padding: 3rem 0 2.5rem;
+      border-bottom: 2px solid var(--or-doux);
+    }
+
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1 1 300px;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      color: var(--vert-profond);
+      line-height: 1.2;
+    }
+
+    .hero-highlight {
+      background: #1f3b33d9;
+      color: #fdeece;
+      display: inline-block;
+      padding: 0.2rem 1.5rem;
+      border-radius: 40px;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .deadline {
+      background: #f9eedb;
+      border-left: 8px solid var(--or-doux);
+      padding: 0.7rem 1.5rem;
+      border-radius: 0 40px 40px 0;
+      font-weight: 600;
+      color: #1c3722;
+      display: inline-block;
+    }
+
+    .hero-icon {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .hero-icon i {
+      font-size: 10rem;
+      color: var(--vert-profond);
+      opacity: 0.4;
+    }
+
+    /* --- section titre (ornement) --- */
+    .section-title {
+      text-align: center;
+      margin: 2.5rem 0 2rem;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--bleu-nuit);
+    }
+    .section-title .ornement {
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--or-doux), var(--vert-sauge), transparent);
+      margin: 0.3rem auto;
+    }
+
+    /* --- GRILLE DES 2 COURS --- */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .card {
+      background: var(--blanc-casse);
+      border-radius: 30px 20px 30px 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 25px -8px rgba(60, 45, 30, 0.25);
+      transition: transform 0.2s ease, border 0.2s;
+      border: 1px solid #ddceb5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--or-doux);
+      box-shadow: 0 20px 30px -5px #2f5a3b70;
+    }
+
+    .card-header {
+      background: var(--vert-profond);
+      padding: 2rem 1rem 1.5rem;
+      text-align: center;
+      color: white;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .card-header i {
+      font-size: 3.2rem;
+      background: #fee9c0;
+      color: var(--vert-profond);
+      padding: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 5px 0 #a28350;
+    }
+
+    .card-header h3 {
+      font-size: 1.8rem;
+      margin: 1rem 0 0.2rem;
+      color: #fbebc0;
+    }
+
+    .card-body {
+      padding: 1.5rem 1.5rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-body i.fa-circle-check {
+      color: var(--vert-profond);
+      font-size: 1.2rem;
+    }
+
+    .badge {
+      background: var(--or-doux);
+      color: #1d3a25;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin: 1rem 0 0.8rem;
+      align-self: flex-start;
+    }
+
+    .btn-small {
+      background: transparent;
+      border: 2px solid var(--vert-profond);
+      color: var(--vert-profond);
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      text-align: center;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .btn-small:hover {
+      background: var(--vert-profond);
+      color: white;
+    }
+
+    /* bannière "gratuit / en ligne" */
+    .info-strip {
+      background: var(--vert-sauge);
+      color: white;
+      padding: 1.8rem 0;
+      border-radius: 80px 0 80px 0;
+      margin: 2rem 0 3rem;
+      text-align: center;
+    }
+
+    .info-strip p {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .info-strip i {
+      color: var(--or-doux);
+      margin: 0 0.3rem;
+    }
+
+    /* encart inscription */
+    .inscription-note {
+      background: #e5d6bd;
+      border-radius: 50px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0 3rem;
+    }
+    .inscription-note .date {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1b3722;
+    }
+    .inscription-note i {
+      color: var(--bleu-nuit);
+      font-size: 2rem;
+    }
+    .btn-don {
+      background: var(--bleu-nuit);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* NOUVELLE SECTION : À PROPOS (rapide) */
+    .about-section {
+      background-color: #efe2cf;
+      border-radius: 60px 20px 60px 20px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0;
+      border: 2px dashed var(--or-doux);
+    }
+
+    .about-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about-text {
+      flex: 2 1 300px;
+    }
+
+    .about-text h3 {
+      font-size: 2.2rem;
+      color: var(--vert-profond);
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .about-icon {
+      flex: 1 1 150px;
+      text-align: center;
+      font-size: 6rem;
+      color: var(--vert-profond);
+      opacity: 0.7;
+    }
+
+    /* footer */
+    footer {
+      background: var(--bleu-nuit);
+      color: #f0e2d0;
+      padding: 2.5rem 0 1rem;
+      margin-top: 3rem;
+      border-top: 4px solid var(--or-doux);
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      flex: 1 1 180px;
+    }
+
+    .footer-col .social a {
+      color: #dac29c;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #7b977b;
+      font-size: 0.9rem;
+    }
+
+    /* responsive téléphone */
+    @media (max-width: 480px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      nav ul {
+        justify-content: center;
+      }
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+      .hero-highlight {
+        font-size: 1.2rem;
+      }
+      .hero-icon i {
+        font-size: 7rem;
+      }
+      .about-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1><i class="fas fa-tree"></i> Hadiqat-ul-ilm <span>Jardin du savoir</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Cours</a></li>
+          <!-- Documents (anciennement mentions légales) -->
+          <li><a href="#">Documents</a></li>
+          <!-- Attestations (nouveau) -->
+          <li><a href="#">Attestations</a></li>
+          <!-- À propos (nouveau) -->
+          <li><a href="#">À propos</a></li>
+          <!-- Faire un don (distinct) -->
+          <li class="don-link"><a href="#"><i class="fas fa-heart"></i> Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Ramadan -->
+  <section class="hero">
+    <div class="container hero-flex">
+      <div class="hero-content">
+        <span class="hero-highlight"><i class="fas fa-star"></i> 🌙 RAMADAN 1447 H</span>
+        <h2>Hadiqat-ul-ilm</h2>
+        <p style="font-size:1.8rem; font-weight:600; color:#2d5a3b;">2 PROGRAMMES EXCLUSIFS & GRATUITS :</p>
+        <p><i class="fas fa-check-circle" style="color:#248f4b;"></i> 📖 APPRENDRE LA LECTURE DU CORAN – Niveau débutant</p>
+        <p><i class="fas fa-check-circle" style="color:#248f4b;"></i> ☪️ JURISPRUDENCE DU JEÛNE – Fiqh As-Siyam</p>
+        <div class="deadline">
+          <i class="fas fa-calendar-alt"></i> Inscription avant le : <strong>20 février 2026</strong>
+        </div>
+      </div>
+      <div class="hero-icon">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Titre deux cours -->
+    <div class="section-title">
+      <h2>📚 Les deux cours du Ramadan</h2>
+      <div class="ornement"></div>
+    </div>
+
+    <!-- Grille des 2 cours -->
+    <div class="courses-grid">
+      <!-- 1. Apprendre la lecture du Coran -->
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-book-quran"></i>
+          <h3>📖 Apprendre la lecture du Coran</h3>
+        </div>
+        <div class="card-body">
+          <p><i class="fa-regular fa-circle-check"></i> Niveau débutant – alphabet arabe</p>
+          <p><i class="fa-regular fa-circle-check"></i> Règles de base du tajwid</p>
+          <p><i class="fa-regular fa-circle-check"></i> Pratique avec sourates courtes</p>
+          <p><i class="fa-regular fa-circle-check"></i> Accès direct aux sessions en direct</p>
+          <div class="badge"><i class="fas fa-gem"></i> Complet débutant</div>
+          <a href="#" class="btn-small"><i class="fas fa-video"></i> Voir le programme</a>
+        </div>
+      </div>
+
+      <!-- 2. Jurisprudence du jeûne -->
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-hand-sparkles"></i>
+          <h3>☪️ Jurisprudence du jeûne <br> (Fiqh As-Siyam)</h3>
+        </div>
+        <div class="card-body">
+          <p><i class="fa-regular fa-circle-check"></i> Piliers et conditions du jeûne</p>
+          <p><i class="fa-regular fa-circle-check"></i> Ce qui rompt le jeûne (madâhib)</p>
+          <p><i class="fa-regular fa-circle-check"></i> Règles pour la femme, voyageur</p>
+          <p><i class="fa-regular fa-circle-check"></i> Nuits du Ramadan & aumône</p>
+          <div class="badge"><i class="fas fa-gem"></i> Niveau intermédiaire</div>
+          <a href="#" class="btn-small"><i class="fas fa-video"></i> Voir le programme</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- bannière 💻 Cours en ligne -->
+    <div class="info-strip">
+      <p><i class="fas fa-laptop"></i> 💻 Cours en ligne – direct & replay  <i class="fas fa-wifi"></i> accès gratuit</p>
+    </div>
+
+    <!-- encart inscription + don -->
+    <div class="inscription-note">
+      <div><i class="fas fa-clock"></i> <span class="date">📅 Inscription avant le 20 février 2026</span></div>
+      <a href="#" class="btn-don"><i class="fas fa-hand-holding-heart"></i> Faire un don</a>
+    </div>
+
+    <!-- NOUVELLE SECTION À PROPOS (pour rendre visible "À propos") -->
+    <div class="about-section" id="apropos">
+      <div class="about-flex">
+        <div class="about-text">
+          <h3><i class="fas fa-leaf" style="color: var(--vert-profond);"></i> À propos de Hadiqat-ul-ilm</h3>
+          <p>Notre jardin du savoir est né d’une volonté : rendre l’apprentissage de l’islam accessible à tous, sans barrière. Nous proposons des cours en ligne gratuits, dispensés par des enseignants qualifiés, dans un esprit de fraternité et d’excellence. Chaque programme est conçu pour vous accompagner pas à pas, que vous soyez débutant ou à la recherche d’un approfondissement.</p>
+          <p style="margin-top: 1rem;"><i class="fas fa-certificate" style="color: var(--or-doux);"></i> Des attestations sont délivrées à la fin de chaque cursus (voir rubrique “Attestations”).</p>
+        </div>
+        <div class="about-icon">
+          <i class="fas fa-users"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Petit rappel attestations & documents -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0;">
+      <div style="background: #e7dccb; padding: 1.5rem 2rem; border-radius: 40px; text-align: center;">
+        <i class="fas fa-file-alt" style="font-size: 2.5rem; color: var(--vert-profond);"></i>
+        <h4 style="font-size: 1.8rem;">Attestations</h4>
+        <p>Reconnues et téléchargeables</p>
+      </div>
+      <div style="background: #e7dccb; padding: 1.5rem 2rem; border-radius: 40px; text-align: center;">
+        <i class="fas fa-folder-open" style="font-size: 2.5rem; color: var(--vert-profond);"></i>
+        <h4 style="font-size: 1.8rem;">Documents</h4>
+        <p>Supports de cours & PDF</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer avec les liens mis à jour -->
+  <footer>
+    <div class="container footer-flex">
+      <div class="footer-col">
+        <h4><i class="fas fa-tree" style="color:var(--or-doux);"></i> Hadiqat-ul-ilm</h4>
+        <p>Savoir accessible & lumière du Coran.</p>
+      </div>
+      <div class="footer-col">
+        <p><i class="fas fa-envelope"></i> contact@hadiqatulilm.org</p>
+        <p><i class="fas fa-phone-alt"></i> +212 5XX-XXXXX</p>
+      </div>
+      <div class="footer-col">
+        <p>Suivez-nous</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- rappel des rubriques dans le footer -->
+    <div class="copyright container">
+      <p>© 2026 Hadiqat-ul-ilm — <a href="#" style="color:#d4af37;">Documents</a> | <a href="#" style="color:#d4af37;">Attestations</a> | <a href="#" style="color:#d4af37;">À propos</a> | <a href="#" style="color:#d4af37;">Faire un don</a></p>
+      <p style="font-family:'Amiri';">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+    </div>
+  </footer>
+</body>
+</html>
