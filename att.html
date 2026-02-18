@@ -102,7 +102,7 @@
       transition: 0.2s;
     }
 
-    nav a:hover, nav a[style*="color:var(--or-doux)"] {
+    nav a:hover, nav a.active {
       color: var(--or-doux);
       border-bottom-color: var(--or-doux);
     }
@@ -407,7 +407,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="cours.html">Cours</a></li>
           <li><a href="docs.html">Documents</a></li>
-          <li><a href="att.html" style="color:var(--or-doux); border-bottom-color:var(--or-doux);">Attestations</a></li>
+          <li><a href="att.html" class="active">Attestations</a></li>
           <li><a href="propo.html">À propos</a></li>
           <li class="don-link"><a href="#"><i class="fas fa-heart"></i> Faire un don</a></li>
         </ul>
@@ -524,7 +524,7 @@
     function displayCertificate(id) {
       const data = attestationsDB[id];
       
-      // Construction HTML du certificat / PDF simulé
+      // Construction HTML du certificat / PDF simulé avec un vrai lien href
       certificateDisplay.innerHTML = `
         <div class="certificate-header">
           <i class="fas fa-certificate"></i>
@@ -544,7 +544,7 @@
           </div>
         </div>
         <div style="text-align: center;">
-          <a href="#" class="btn-download" onclick="alert('Téléchargement simulé de ${data.pdfUrl}'); return false;">
+          <a href="${data.pdfUrl}" class="btn-download" target="_blank">
             <i class="fas fa-download"></i> Télécharger le PDF
           </a>
           <p style="margin-top: 1rem; font-size:0.9rem; opacity:0.8;">
