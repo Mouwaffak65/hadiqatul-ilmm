@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadiqatul-ilm · Nos cours</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf5ea;
+      color: #2a4230;
+      line-height: 1.5;
+    }
+
+    :root {
+      --vert-sauge: #6b8f71;
+      --vert-profond: #1f4a2c;
+      --or-doux: #c9a959;
+      --bleu-nuit: #173e4c;
+      --sable: #efe6d9;
+      --blanc-casse: #fefcf5;
+      --terre: #9c7a5c;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.75rem;
+    }
+
+    /* --- HEADER (identique à l'accueil) --- */
+    header {
+      background: var(--bleu-nuit);
+      color: white;
+      padding: 1rem 0;
+      border-bottom: 4px solid var(--or-doux);
+      box-shadow: 0 4px 12px rgba(0,20,10,0.2);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .logo h1 span {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+      color: var(--or-doux);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: -0.3rem;
+    }
+
+    .logo i {
+      color: var(--or-doux);
+      margin-right: 0.3rem;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.6rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      color: #f0e7d6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--or-doux);
+      border-bottom-color: var(--or-doux);
+    }
+
+    .don-link a {
+      background: var(--or-doux);
+      color: #1d3925;
+      padding: 0.4rem 1.3rem;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+    }
+    .don-link a:hover {
+      background: #b8933f;
+      color: #102815;
+      border-bottom: none;
+    }
+
+    /* --- BANNIÈRE PAGE COURS --- */
+    .page-banner {
+      background: linear-gradient(115deg, #d8cbb4, #efe2d0);
+      padding: 2.5rem 0;
+      text-align: center;
+      border-bottom: 2px solid var(--or-doux);
+    }
+
+    .page-banner h2 {
+      font-size: 3rem;
+      color: var(--vert-profond);
+    }
+
+    .page-banner p {
+      font-size: 1.3rem;
+      color: #2e4d37;
+    }
+
+    /* --- FIL D'ARIANE (simple) --- */
+    .breadcrumb {
+      margin: 1.5rem 0 0.5rem;
+      color: #6d8a73;
+    }
+    .breadcrumb a {
+      color: var(--vert-profond);
+      text-decoration: none;
+    }
+
+    /* --- SECTION DÉTAILS DES COURS (2 cours) --- */
+    .cours-detail {
+      margin: 2rem 0 4rem;
+    }
+
+    .carte-cours {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+      background: var(--blanc-casse);
+      border-radius: 50px 20px 50px 20px;
+      padding: 2rem;
+      box-shadow: 0 15px 30px -8px rgba(60, 45, 30, 0.2);
+      border: 1px solid #e0cfb5;
+    }
+
+    .carte-cours:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .cours-image {
+      flex: 1 1 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+      color: var(--vert-profond);
+      background: #f1e9dc;
+      border-radius: 40px;
+      padding: 1rem;
+    }
+
+    .cours-infos {
+      flex: 3 1 400px;
+    }
+
+    .cours-infos h3 {
+      font-size: 2.4rem;
+      color: var(--bleu-nuit);
+      border-left: 10px solid var(--or-doux);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cours-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin: 1.2rem 0;
+    }
+
+    .meta-item {
+      background: #ebdfce;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #21452b;
+    }
+
+    .meta-item i {
+      color: var(--or-doux);
+      margin-right: 0.5rem;
+    }
+
+    .cours-description {
+      margin: 1.8rem 0;
+    }
+
+    .cours-description p {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .cours-description i.fa-check {
+      color: var(--vert-profond);
+      margin-right: 0.8rem;
+    }
+
+    .programme-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .programme-list li {
+      margin-bottom: 0.7rem;
+      font-size: 1.05rem;
+    }
+
+    .btn-inscription {
+      display: inline-block;
+      background: var(--vert-profond);
+      color: white;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--or-doux);
+      transition: 0.2s;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .btn-inscription i {
+      margin-right: 0.5rem;
+    }
+
+    .btn-inscription:hover {
+      background: #246b35;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 18px #365e3b50;
+    }
+
+    /* --- TABLEAU COMPARATIF (optionnel mais clair) --- */
+    .comparatif {
+      background: #e8ddce;
+      border-radius: 40px;
+      padding: 2rem;
+      margin: 4rem 0;
+    }
+
+    .comparatif h3 {
+      font-size: 2.2rem;
+      text-align: center;
+      color: #1f3b2f;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: #fdf7ef;
+      border-radius: 20px;
+    }
+
+    th {
+      background: var(--vert-profond);
+      color: white;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #cfba9e;
+      text-align: center;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .dispo {
+      color: #257735;
+      font-weight: 700;
+    }
+
+    /* --- FOOTER (identique) --- */
+    footer {
+      background: var(--bleu-nuit);
+      color: #f0e2d0;
+      padding: 2.5rem 0 1rem;
+      margin-top: 3rem;
+      border-top: 4px solid var(--or-doux);
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      flex: 1 1 180px;
+    }
+
+    .footer-col .social a {
+      color: #dac29c;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #7b977b;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .carte-cours {
+        flex-direction: column !important;
+        padding: 1.5rem;
+      }
+      .cours-image {
+        font-size: 6rem;
+      }
+      .page-banner h2 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1><i class="fas fa-tree"></i> Hadiqat-ul-ilm <span>Jardin du savoir</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="cours.html" style="color:var(--or-doux); border-bottom-color:var(--or-doux);">Cours</a></li>
+          <li><a href="#">Documents</a></li>
+          <li><a href="#">Attestations</a></li>
+          <li><a href="#">À propos</a></li>
+          <li class="don-link"><a href="#"><i class="fas fa-heart"></i> Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h2><i class="fas fa-graduation-cap"></i> Nos cours en ligne</h2>
+      <p>Deux programmes exclusifs et gratuits pour le Ramadan 1447H</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="index.html">Accueil</a> <i class="fas fa-chevron-right" style="font-size:0.8rem;"></i> Cours</p>
+    </div>
+
+    <!-- DÉTAIL DES DEUX COURS (version enrichie) -->
+    <section class="cours-detail">
+
+      <!-- 1er cours : Apprendre la lecture du Coran -->
+      <div class="carte-cours">
+        <div class="cours-image">
+          <i class="fas fa-book-quran"></i>
+        </div>
+        <div class="cours-infos">
+          <h3>📖 Apprendre la lecture du Coran</h3>
+          <div class="cours-meta">
+            <span class="meta-item"><i class="fas fa-signal"></i> Niveau débutant</span>
+            <span class="meta-item"><i class="fas fa-clock"></i> 6 séances (en direct)</span>
+            <span class="meta-item"><i class="fas fa-video"></i> Replay disponible</span>
+          </div>
+          <div class="cours-description">
+            <p><i class="fas fa-check"></i> Un cours conçu pour les francophones n'ayant jamais lu l'arabe. Vous apprendrez à reconnaître les lettres, les prononcer et les lier pour former des mots du Coran.</p>
+            <p><i class="fas fa-check"></i> Méthode progressive éprouvée, avec exercices pratiques et correction personnalisée.</p>
+          </div>
+          <h4>Programme détaillé :</h4>
+          <ul class="programme-list">
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 1 : Alphabet arabe – points d’articulation</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 2 : Les voyelles courtes et longues</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 3 : La soukoun et le tanwin</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 4 : Règles de base du tajwid (prolongations)</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 5 : Lecture de sourates courtes (Al-Fatiha, Al-Ikhlas...)</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 6 : Révision et évaluation</li>
+          </ul>
+          <p><strong>📅 Début du cours :</strong> 1er mars 2026 (inscription avant le 20 février)</p>
+          <a href="#" class="btn-inscription"><i class="fas fa-pen-to-square"></i> S'inscrire gratuitement</a>
+          <p style="margin-top:1rem;"><i class="fas fa-file-pdf" style="color:#b22222;"></i> Support de cours fourni (PDF)</p>
+        </div>
+      </div>
+
+      <!-- 2e cours : Jurisprudence du jeûne -->
+      <div class="carte-cours">
+        <div class="cours-image">
+          <i class="fas fa-hand-sparkles"></i>
+        </div>
+        <div class="cours-infos">
+          <h3>☪️ Jurisprudence du jeûne · Fiqh As-Siyam</h3>
+          <div class="cours-meta">
+            <span class="meta-item"><i class="fas fa-signal"></i> Niveau intermédiaire</span>
+            <span class="meta-item"><i class="fas fa-clock"></i> 5 séances</span>
+            <span class="meta-item"><i class="fas fa-mosque"></i> Validé par un comité scientifique</span>
+          </div>
+          <div class="cours-description">
+            <p><i class="fas fa-check"></i> Comprendre les règles du jeûne selon le Coran et la Sunna, avec les divergences respectueuses (école malikite et hanafite).</p>
+            <p><i class="fas fa-check"></i> Un cours indispensable pour vivre le Ramadan en conscience et en pratique.</p>
+          </div>
+          <h4>Programme détaillé :</h4>
+          <ul class="programme-list">
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 1 : Définition, mérites et sagesse du jeûne</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 2 : Conditions d'obligation, piliers et Sunna</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 3 : Ce qui rompt le jeûne ou non (fiqh comparé)</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 4 : Cas particuliers : malade, voyageur, femme enceinte</li>
+            <li><i class="fas fa-circle" style="color:var(--or-doux); font-size:0.6rem;"></i> Séance 5 : Les nuits du Ramadan (tarawih, aumône) et 'Aïd</li>
+          </ul>
+          <p><strong>📅 Début du cours :</strong> 3 mars 2026 (inscription avant le 20 février)</p>
+          <a href="#" class="btn-inscription"><i class="fas fa-pen-to-square"></i> S'inscrire gratuitement</a>
+          <p style="margin-top:1rem;"><i class="fas fa-file-pdf" style="color:#b22222;"></i> Support de cours + tableau récapitulatif</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tableau comparatif (aide à la décision) -->
+    <div class="comparatif">
+      <h3><i class="fas fa-table"></i> Comparatif rapide</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Critères</th>
+              <th>📖 Lecture du Coran</th>
+              <th>☪️ Fiqh As-Siyam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Niveau requis</td>
+              <td>Aucun (débutant complet)</td>
+              <td>Notions de base en arabe / fiqh</td>
+            </tr>
+            <tr>
+              <td>Volume horaire</td>
+              <td>6 x 1h15</td>
+              <td>5 x 1h30</td>
+            </tr>
+            <tr>
+              <td>Enseignant</td>
+              <td>Ustadh Ahmed (sanad)</td>
+              <td>Sheikha Fatima (diplômée)</td>
+            </tr>
+            <tr>
+              <td>Attestation</td>
+              <td class="dispo">✓ délivrée</td>
+              <td class="dispo">✓ délivrée</td>
+            </tr>
+            <tr>
+              <td>Accès aux replays</td>
+              <td>6 mois</td>
+              <td>6 mois</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- rappel inscription globale -->
+    <div style="background: var(--or-doux); color: #1b3b24; padding: 1.8rem; border-radius: 60px; text-align: center; margin: 3rem 0;">
+      <p style="font-size: 1.8rem; font-weight: 700;"><i class="fas fa-bell"></i> Inscription avant le 20 février 2026</p>
+      <p style="font-size: 1.2rem;">Les deux cours sont gratuits, ne tardez pas !</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-flex">
+      <div class="footer-col">
+        <h4><i class="fas fa-tree" style="color:var(--or-doux);"></i> Hadiqat-ul-ilm</h4>
+        <p>Savoir accessible & lumière du Coran.</p>
+      </div>
+      <div class="footer-col">
+        <p><i class="fas fa-envelope"></i> contact@hadiqatulilm.org</p>
+        <p><i class="fas fa-phone-alt"></i> +212 5XX-XXXXX</p>
+      </div>
+      <div class="footer-col">
+        <p>Suivez-nous</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright container">
+      <p>© 2026 Hadiqat-ul-ilm — <a href="#" style="color:#d4af37;">Documents</a> | <a href="#" style="color:#d4af37;">Attestations</a> | <a href="#" style="color:#d4af37;">À propos</a> | <a href="#" style="color:#d4af37;">Faire un don</a></p>
+      <p style="font-family:'Amiri';">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+    </div>
+  </footer>
+</body>
+</html>
