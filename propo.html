@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hadiqatul-ilm · À propos</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf5ea;
+      color: #2a4230;
+      line-height: 1.5;
+    }
+
+    :root {
+      --vert-sauge: #6b8f71;
+      --vert-profond: #1f4a2c;
+      --or-doux: #c9a959;
+      --bleu-nuit: #173e4c;
+      --sable: #efe6d9;
+      --blanc-casse: #fefcf5;
+      --terre: #9c7a5c;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.75rem;
+    }
+
+    /* --- HEADER (identique) --- */
+    header {
+      background: var(--bleu-nuit);
+      color: white;
+      padding: 1rem 0;
+      border-bottom: 4px solid var(--or-doux);
+      box-shadow: 0 4px 12px rgba(0,20,10,0.2);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .logo h1 span {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+      color: var(--or-doux);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: -0.3rem;
+    }
+
+    .logo i {
+      color: var(--or-doux);
+      margin-right: 0.3rem;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.6rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      color: #f0e7d6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--or-doux);
+      border-bottom-color: var(--or-doux);
+    }
+
+    .don-link a {
+      background: var(--or-doux);
+      color: #1d3925;
+      padding: 0.4rem 1.3rem;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+    }
+    .don-link a:hover {
+      background: #b8933f;
+      color: #102815;
+      border-bottom: none;
+    }
+
+    /* --- BANNIÈRE PAGE À PROPOS --- */
+    .page-banner {
+      background: linear-gradient(115deg, #cfc0a8, #ecddc9);
+      padding: 2.5rem 0;
+      text-align: center;
+      border-bottom: 2px solid var(--or-doux);
+    }
+
+    .page-banner h2 {
+      font-size: 3rem;
+      color: var(--vert-profond);
+    }
+
+    .page-banner p {
+      font-size: 1.3rem;
+      color: #2e4d37;
+    }
+
+    /* --- FIL D'ARIANE --- */
+    .breadcrumb {
+      margin: 1.5rem 0 0.5rem;
+      color: #6d8a73;
+    }
+    .breadcrumb a {
+      color: var(--vert-profond);
+      text-decoration: none;
+    }
+
+    /* --- SECTION À PROPOS (MISSION) --- */
+    .about-mission {
+      background: var(--blanc-casse);
+      border-radius: 60px 20px 60px 20px;
+      padding: 3rem 2.5rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 15px 30px -8px rgba(60, 45, 30, 0.2);
+      border: 1px solid #ddceb5;
+    }
+
+    .mission-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .mission-text {
+      flex: 2 1 350px;
+    }
+
+    .mission-text h3 {
+      font-size: 2.5rem;
+      color: var(--bleu-nuit);
+      margin-bottom: 1.5rem;
+      border-left: 8px solid var(--or-doux);
+      padding-left: 1.2rem;
+    }
+
+    .mission-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .mission-icon {
+      flex: 1 1 200px;
+      text-align: center;
+      font-size: 8rem;
+      color: var(--vert-profond);
+      opacity: 0.7;
+    }
+
+    /* --- SECTION VALEURS (3 CARTES) --- */
+    .values-section {
+      margin: 4rem 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .value-card {
+      background: var(--blanc-casse);
+      border-radius: 40px 15px 40px 15px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 2px solid #e0cfb5;
+      transition: all 0.2s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--or-doux);
+      box-shadow: 0 15px 25px -8px #2f5a3b70;
+    }
+
+    .value-card i {
+      font-size: 3.5rem;
+      color: var(--or-doux);
+      background: #f4eadb;
+      padding: 1rem;
+      border-radius: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .value-card h4 {
+      font-size: 1.8rem;
+      color: var(--vert-profond);
+      margin-bottom: 0.8rem;
+    }
+
+    .value-card p {
+      font-size: 1rem;
+      color: #3b5a41;
+    }
+
+    /* --- SECTION ÉQUIPE (SIMPLIFIÉE) --- */
+    .team-section {
+      margin: 4rem 0;
+      background: #efe4d4;
+      border-radius: 80px 20px 80px 20px;
+      padding: 3rem 2rem;
+    }
+
+    .team-section h3 {
+      font-size: 2.3rem;
+      text-align: center;
+      color: var(--bleu-nuit);
+      margin-bottom: 2rem;
+    }
+
+    .team-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .team-member {
+      background: var(--blanc-casse);
+      border-radius: 50px 20px 50px 20px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      flex: 1 1 200px;
+      border: 1px solid var(--or-doux);
+    }
+
+    .team-member i {
+      font-size: 4rem;
+      color: var(--vert-profond);
+      background: #efe3d2;
+      padding: 0.8rem;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h4 {
+      font-size: 1.6rem;
+      color: #1d3e28;
+    }
+
+    .team-member p {
+      font-weight: 500;
+      color: #8b6f4c;
+    }
+
+    /* --- SECTION CONTACT RAPIDE --- */
+    .contact-box {
+      background: linear-gradient(135deg, #1e3b4f 0%, #2b4c3b 100%);
+      color: white;
+      border-radius: 60px;
+      padding: 2.5rem;
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-box p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-btn {
+      background: var(--or-doux);
+      color: #1d3925;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: inline-block;
+      border: 2px solid white;
+      transition: 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: #b38f4a;
+      transform: scale(1.02);
+    }
+
+    /* --- FOOTER (IDENTIQUE À L'ACCUEIL) --- */
+    footer {
+      background: var(--bleu-nuit);
+      color: #f0e2d0;
+      padding: 2.5rem 0 1rem;
+      margin-top: 3rem;
+      border-top: 4px solid var(--or-doux);
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      flex: 1 1 180px;
+    }
+
+    .footer-col .social a {
+      color: #dac29c;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #7b977b;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .page-banner h2 {
+        font-size: 2.5rem;
+      }
+      .mission-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .mission-text h3 {
+        border-left: none;
+        border-bottom: 4px solid var(--or-doux);
+        padding-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <h1><i class="fas fa-tree"></i> Hadiqat-ul-ilm <span>Jardin du savoir</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="cours.html">Cours</a></li>
+          <li><a href="docs.html">Documents</a></li>
+          <li><a href="att.html">Attestations</a></li>
+          <li><a href="propo.html" class="active">À propos</a></li>
+          <li class="don-link"><a href="#"><i class="fas fa-heart"></i> Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h2><i class="fas fa-leaf"></i> À propos de nous</h2>
+      <p>Découvrez Hadiqat-ul-ilm, le jardin du savoir islamique</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="index.html">Accueil</a> <i class="fas fa-chevron-right" style="font-size:0.8rem;"></i> À propos</p>
+    </div>
+
+    <!-- Section Mission (reprise de l'accueil enrichie) -->
+    <div class="about-mission">
+      <div class="mission-flex">
+        <div class="mission-text">
+          <h3><i class="fas fa-quote-right" style="color: var(--or-doux);"></i> Notre mission</h3>
+          <p>Hadiqat-ul-ilm ("Le Jardin du Savoir") est né d'une conviction profonde : rendre l'apprentissage de l'islam accessible à tous, sans barrière géographique ni financière.</p>
+          <p>Nous proposons des cours en ligne <strong>gratuits</strong>, dispensés par des enseignants qualifiés, dans un esprit de fraternité, d'authenticité et d'excellence. Chaque programme est conçu pour vous accompagner pas à pas, que vous soyez débutant ou en quête d'approfondissement.</p>
+          <p>Notre nom s'inspire des jardins de la civilisation islamique, lieux de savoir, de paix et de partage. Comme un jardin, nous cultivons les connaissances pour qu'elles portent leurs fruits dans vos cœurs et vos pratiques.</p>
+        </div>
+        <div class="mission-icon">
+          <i class="fas fa-tree"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nos valeurs (3 piliers) -->
+    <div class="values-section">
+      <div class="section-title" style="text-align:center; margin-bottom:2rem;">
+        <h2 style="font-size:2.5rem; color:var(--bleu-nuit);">Nos valeurs</h2>
+        <div style="width:100px; height:3px; background:linear-gradient(90deg, transparent, var(--or-doux), var(--vert-sauge), transparent); margin:0.5rem auto;"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h4>Gratuité</h4>
+          <p>Le savoir est une lumière qui ne se vend pas. Tous nos cours sont entièrement gratuits.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-check-double"></i>
+          <h4>Authenticité</h4>
+          <p>Nos enseignements suivent la compréhension des pieux prédécesseurs, avec des sources claires.</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-users"></i>
+          <h4>Fraternité</h4>
+          <p>Un environnement bienveillant où chaque étudiant trouve sa place, quel que soit son niveau.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Contact rapide / soutien -->
+    <div class="contact-box">
+      <h3>🌿 Soutenez le jardin</h3>
+      <p>Vos dons nous aident à développer davantage de cours gratuits et à préparer de nouveaux programmes.</p>
+      <a href="#" class="contact-btn"><i class="fas fa-heart"></i> Faire un don</a>
+    </div>
+  </div>
+
+  <!-- FOOTER IDENTIQUE À L'ACCUEIL -->
+  <footer>
+    <div class="container footer-flex">
+      <div class="footer-col">
+        <h4><i class="fas fa-tree" style="color:var(--or-doux);"></i> Hadiqat-ul-ilm</h4>
+        <p>« Quiconque emprunte un chemin pour acquérir un savoir, Allah lui facilite un chemin vers le Paradis. » (Muslim)</p>
+      </div>
+      <div class="footer-col">
+        <p><i class="fas fa-envelope"></i> contact@hadiqatulilm.org</p>
+        <p><i class="fas fa-phone-alt"></i> +212 5XX-XXXXX</p>
+        <p><i class="fas fa-map-pin"></i> 3, rue de la sagesse, Fès</p>
+      </div>
+      <div class="footer-col">
+        <p>Suivez-nous</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright container">
+      <p>© 2025 Hadiqat-ul-ilm · Jardin du savoir islamique · Tous droits réservés</p>
+      <p style="font-family:'Amiri';">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+    </div>
+  </footer>
+</body>
+</html>
